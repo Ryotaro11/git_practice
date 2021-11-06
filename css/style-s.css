@@ -1,0 +1,1148 @@
+@charset "UTF-8";
+
+/* ベース */
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+.wrap {
+    overflow: hidden;
+}
+
+body {
+    color: #333;
+    font-size: 1.4rem;
+    font-family: "YuGothic", Yu Gothic, sans-serif;
+}
+
+li {
+    list-style-type: none;
+}
+
+
+/* 共通パーツ */
+
+#concept,
+#feature,
+#staff,
+#life,
+#access,
+#daily,
+#contact {
+    padding-top: 70px;
+    padding-bottom: 60px;
+}
+
+.about-text {
+    font-size: 1.8rem;
+    letter-spacing: 0.6px;
+}
+
+.content-wrapper {
+    width: 90%;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 2.4rem;
+    margin-bottom: -5px;
+}
+
+.ja-title {
+    font-size: 1.2rem;
+}
+
+
+/* 背景 */
+
+#mainVisual {
+    background: linear-gradient(to bottom, #00afcc, #a0d8ef);
+    height: 100vh;
+}
+
+
+/* グローバルナビゲーションをスマホの場合、一旦非表示にしている。 */
+
+.gnavi {
+    position: fixed;
+    /*表示位置を固定*/
+    z-index: 2;
+    /*重ね順を変更*/
+    top: 0;
+    /*表示位置を指定*/
+    left: 0;
+    /*表示位置を指定*/
+    background: #fff;
+    /*背景を白にする*/
+    color: #000;
+    /*文字色を黒にする*/
+    text-align: center;
+    /*テキストを中央揃え*/
+    width: 60%;
+    /*全幅表示*/
+    height: 100%;
+    transform: translateY(-100%);
+    /*ナビを上に隠す*/
+    transition: all 0.6s;
+    /*アニメーションの時間を指定*/
+}
+
+.gnavi ul {
+    background: #ccc;
+    /*背景をグレーにする*/
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+.gnavi ul li {
+    font-size: 1.8rem;
+    list-style-type: none;
+    width: 100%;
+}
+
+.gnavi ul li:last-child {
+    border-bottom: none;
+    /*最後のメニュー項目のみ下線を消す*/
+}
+
+.gnavi ul li a {
+    display: block;
+    /*クリックできる領域を広げる*/
+    color: #000;
+    padding: 20px 0;
+    text-decoration: none;
+}
+
+
+/*トグルボタンが押されたときに付与するクラス*/
+
+.gnavi.active {
+    transform: translateY(0%);
+}
+
+
+/* ハンバーガーメニュー */
+
+.menu-trigger {
+    position: fixed;
+    /* bodyに対しての絶対位置指定 */
+    right: 5%;
+    top: 5%;
+    width: 56px;
+    height: 42px;
+    cursor: pointer;
+    z-index: 3;
+    /*ボックスの重ね合わせ（位置指定を数字が大きいほど、優先する）*/
+}
+
+
+/**/
+
+.menu-trigger span {
+    display: block;
+    /*要素を動かすため*/
+    position: absolute;
+    /*白線をメニュートリガーを基準に移動をさせている*/
+    width: 56px;
+    border-bottom: solid 4px #fff;
+    border-radius: 4px;
+    transition: .35s ease-in-out;
+    /*変化の速度をなめらかに指定*/
+}
+
+
+/*白線の配置を13pxごとに下に並ぶよう指定*/
+
+.menu-trigger span:nth-child(1) {
+    top: 0;
+}
+
+.menu-trigger span:nth-child(2) {
+    top: 13px;
+}
+
+.menu-trigger span:nth-child(3) {
+    top: 26px;
+}
+
+
+/* 1番上のspan要素をマイナス45度方向に回す */
+
+.menu-trigger.active span:nth-child(1) {
+    top: 18px;
+    transform: rotate(-45deg);
+}
+
+
+/* 2番目と3番目のspan要素を45度方向に回す */
+
+.menu-trigger.active span:nth-child(2),
+.menu-trigger.active span:nth-child(3) {
+    top: 18px;
+    transform: rotate(45deg);
+}
+
+
+/* メインビジュアル左側*/
+
+
+/* マカロン画像の親要素を画面幅いっぱいにかつ現状の配置より上から100pxより下部分に設置そして、画像を中央配置している。*/
+
+.mv-left {
+    width: 100%;
+    position: relative;
+    top: 100px;
+    text-align: center;
+    z-index: 1;
+}
+
+
+/* 画像を画面幅に対して「45％」を維持*/
+
+.mv-left img {
+    width: 45%;
+}
+
+
+/* メインビジュアル右側 */
+
+
+/* テキストエリアも画面幅いっぱいに設定し、それぞれの子要素を中央配置している。ただし、マカロン画像と被らないように120px分、下げている。 */
+
+.mv-right {
+    width: 100%;
+    text-align: center;
+    margin-top: 120px;
+}
+
+
+/* テキスト部分のスマホ版レイアウト */
+
+h1,
+.price1,
+.price2 {
+    font-family: 'Libre Baskerville', serif;
+}
+
+h1 {
+    font-size: 4.2rem;
+    line-height: 1.2;
+}
+
+.price span {
+    display: inline-block;
+}
+
+.price1 {
+    font-size: 3.2rem;
+    margin-right: 20px;
+}
+
+.price2 {
+    font-size: 4.0rem;
+}
+
+
+/* 購入ボタンのスマホ版レイアウト（文字サイズ調整とテキスト（.mv-right）との間隔の調整が中心） */
+
+.purchase-button {
+    filter: drop-shadow(4px 4px 6px #404040);
+    text-align: center;
+    margin-top: 32px;
+}
+
+.purchase-button a {
+    display: inline-block;
+    background-color: #eb3c55;
+    color: #fff;
+    font-size: 2.4rem;
+    text-align: center;
+    padding: 10px 60px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.purchase-button a:hover {
+    background-color: #fff;
+    color: #eb3c55;
+    transition: 0.6s;
+}
+
+
+/* コンセプトエリア */
+
+#concept {
+    background-image: url(../image/concept/back1.png), url(../image/concept/back2.png);
+    background-size: 40%, 40%;
+    /* 背景画像2枚の大きさを調整します（20%→40%へ） */
+    background-repeat: no-repeat;
+    background-position: 0 100%, 100% 0;
+    overflow-x: hidden;
+    text-align: center;
+    z-index: 3;
+}
+
+
+/*レイヤーの大きさは上余白100px分、下60px分を含むエリア全体にする必要があるため、marginの値をマイナスにして間隔消し、代わりにpaddingの値を増やすことで肌色の領域でぴったり埋める事が出来ます。*/
+
+.concept-wrapper {
+    background: rgba(228, 236, 239, 0.5);
+    margin-top: -100px;
+    padding-top: 70px;
+    margin-bottom: -60px;
+    padding-bottom: 60px;
+}
+
+.concept-copy {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.title {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.main-copy {
+    font-size: 1.8rem;
+    font-weight: 900;
+    margin-bottom: 55px;
+}
+
+.concept-text {
+    font-family: "HG行書体", monospace;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: 400;
+    line-height: 1.8;
+}
+
+
+/* featureエリアのCSS */
+
+#feature {
+    background-color: #c8e1ec;
+}
+
+.feature-box {
+    background-color: #fff;
+    border-radius: 20px;
+    filter: drop-shadow(8px 8px 6px #404040);
+    margin-bottom: 40px;
+    width: 100%;
+    /*横並びの必要がないから（32%⇒100％）*/
+}
+
+.feature-box:nth-of-type(2) {
+    background-color: #efd9dc;
+}
+
+.feature-image {
+    width: 100%;
+    display: block;
+    border-radius: 20px 20px 0 0;
+}
+
+.feature-text {
+    margin-top: 24px;
+    padding: 15px 15px 50px 15px;
+}
+
+.feature-number,
+.feature-about {
+    font-size: 1.4rem;
+}
+
+.feature-about {
+    margin-top: 30px;
+}
+
+.feature-number {
+    display: block;
+    margin-top: 24px;
+}
+
+.feature-title {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+
+/* staffエリアのCSS */
+
+
+/* style-l.css共通 */
+
+#staff {
+    background-color: #e4ecef;
+}
+
+.staff-container {
+    position: relative;
+}
+
+
+/* active要素を持つ.staff-box要素のみ表示させる */
+
+.staff-box {
+    display: none;
+}
+
+.staff-box.active {
+    display: block;
+    /* .staff-containerの領域に.staff-boxが入るように */
+    width: 80%;
+    margin: 0 auto;
+}
+
+.box-design {
+    background-color: #fff;
+    border-radius: 10px;
+    filter: drop-shadow(4px 4px 4px #404040)
+}
+
+.staff-image {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+.staff-title {
+    font-size: 2.0rem;
+}
+
+.staff-text {
+    width: 100%;
+    text-align: center;
+    padding: 15px 15px 30px 15px;
+}
+
+.staff-about {
+    margin: 16px 0 16px;
+    border: 1px solid #eb3c55;
+    padding: 10px;
+    text-align: left;
+}
+
+.staff-name {
+    font-weight: bold;
+    border-bottom: dashed 4px #eb3c55;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.button {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: block;
+    content: '';
+    /*ここは空白のままでいいです*/
+    width: 36px;
+    height: 36px;
+    margin: auto;
+    border-top: 2px solid #000;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.prev {
+    position: absolute;
+    left: 5px;
+    border-left: 2px solid #000;
+    transform: rotate(-45deg);
+}
+
+.next {
+    position: absolute;
+    right: 5px;
+    border-right: 2px solid #000;
+    transform: rotate(45deg);
+}
+
+
+/* life areaの設定*/
+
+.life-wrapper {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    /*要素を折り返している*/
+    justify-content: space-between;
+}
+
+.life-type {
+    text-align: center;
+}
+
+
+/*511px以下の画面サイズ領域の時、2列に横並び（ボックス幅 45%）*/
+
+@media screen and (max-width: 511px) {
+    .life-type {
+        width: 45%;
+    }
+}
+
+
+/*512px以上768px以下の画面サイズ領域の時、3列に横並び（ボックス幅 30%）*/
+
+@media screen and (min-width: 512px) {
+    .life-type {
+        width: 30%;
+    }
+}
+
+
+/*style-l.cssと共通*/
+
+.life-type a {
+    display: block;
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #333;
+    font-size: 1.4rem;
+}
+
+.life-type a:hover {
+    background-color: #eb3c55;
+    color: #fff;
+    transition: 0.6s;
+}
+
+.life-img {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+
+/* モーダルのスタイル */
+
+.modal-main {
+    display: none;
+}
+
+.inner {
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    color: #666666;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.inner-content {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.inner img {
+    width: 40%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.inner-title {
+    margin-top: 40px;
+    margin-bottom: 32px;
+    font-size: 2.8rem;
+    font-weight: bold;
+}
+
+.inner-text {
+    font-size: 1.6rem;
+    width: 70%;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.modalClose {
+    display: inline-block;
+    padding: 20px 40px;
+    background-color: #00afcc;
+    font-size: 1.8rem;
+    color: #fff;
+    text-decoration: none;
+}
+
+.modalClose:hover {
+    color: #00afcc;
+    background-color: #e4e0e1;
+    transition: 0.6s;
+}
+
+
+/* lineupエリアのCSS */
+
+#purchase-area {
+    background: linear-gradient(to bottom, #e095a0, #e4e0e1);
+    padding-top: 70px;
+    padding-bottom: 60px;
+}
+
+
+/*メニュータブの設定*/
+
+.lineup-menu ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.lineup-menu ul li {
+    height: 40px;
+    text-align: center;
+    border-radius: 12px 12px 12px 12px;
+    border: 1px solid #00afcc;
+    background-color: #fff;
+    list-style-type: none;
+}
+
+@media screen and (max-width: 511px) {
+    .lineup-menu ul li {
+        width: 45%;
+        margin-bottom: 24px;
+    }
+}
+
+@media screen and (min-width: 512px) {
+    .lineup-menu ul li {
+        width: 30%;
+        margin-bottom: 32px;
+    }
+}
+
+
+/*メニュータブのa要素リンク領域の設定*/
+
+.lineup-menu ul li a {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 12px 12px 12px 12px;
+    color: #333;
+    width: 100%;
+    line-height: 38px;
+}
+
+.lineup-menu ul li a:hover {
+    color: #fff;
+    background-color: #eb3c55;
+    transition: 0.6s;
+}
+
+
+/* 商品ラインナップのCSS */
+
+.product-wrapper {
+    width: 100%;
+    margin-top: 16px;
+}
+
+.product-image {
+    width: 100%;
+}
+
+.product-image,
+.package-image {
+    width: 100%;
+    border-radius: 20px;
+    border: 1px solid #00afcc;
+}
+
+@media screen and (max-width: 511px) {
+    .lineup-product {
+        width: 100%;
+        margin-bottom: 24px;
+    }
+    .lineup-about {
+        margin-top: 16px;
+    }
+    .product-name {
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (min-width: 512px) {
+    .product-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .lineup-product {
+        width: 45%;
+        margin-bottom: 24px;
+    }
+    .lineup-about {
+        margin-top: 20px;
+    }
+    .product-name {
+        margin-bottom: 10px;
+    }
+}
+
+.name-en {
+    font-size: 2.2rem;
+    font-weight: bold;
+}
+
+.name-ja {
+    font-size: 1.6rem;
+}
+
+
+/*moreボタンのCSS*/
+
+.more-product {
+    text-align: center;
+}
+
+.btn-more {
+    display: inline-block;
+    font-size: 2.2rem;
+    padding: 10px 60px;
+    text-decoration: none;
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #00afcc;
+    border-radius: 15px 15px 15px 15px;
+}
+
+.btn-more:hover {
+    background-color: #da3c41;
+    color: #fff;
+    transition: 0.6s;
+}
+
+
+/*パッケージのCSS*/
+
+#package {
+    padding-top: 70px;
+}
+
+.package-wrapper {
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+/*画面幅525px以下の場合、パッケージボックス（.package-lineup）が1列になるのでwidth:100%;にします。次のパッケージ要素との間隔を24px空けます。*/
+
+@media screen and (max-width: 525px) {
+    .package-lineup {
+        width: 100%;
+        margin-bottom: 24px;
+    }
+}
+
+
+/*画面幅526px以上768px以下の場合、パッケージボックス（.package-lineup）が2列になり、以降はパッケージ要素が折り返されるので、width:45%;にして親要素の「.package-wrapper」に対してflexbox設定をします。flex-wrap: wrap;で折り返し設定にし、justify-content: space-between;で。次のパッケージ要素との間隔を32px空けます。*/
+
+@media screen and (min-width: 526px) {
+    .package-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .package-lineup {
+        width: 45%;
+        margin-bottom: 32px;
+    }
+}
+
+@media screen and (min-width: 526px) {
+    .package-text {
+        margin-top: 24px;
+        margin-bottom: 30px;
+        position: relative;
+        height: 120px;
+    }
+}
+
+@media screen and (max-width: 525px) {
+    .package-text {
+        margin-top: 24px;
+        margin-bottom: 36px;
+        position: relative;
+        height: 80px;
+    }
+}
+
+.package-name {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.package-number {
+    font-size: 2.0rem;
+    font-weight: bold;
+}
+
+.value {
+    font-size: 2.0rem;
+    display: block;
+    float: right;
+}
+
+.value small {
+    font-size: 1.6rem;
+}
+
+
+/* 購入フォーム（style-l.cssと共通） */
+
+.purchase-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.number-form {
+    border: 1px solid #333;
+    background-color: #fff;
+    width: 40px;
+    height: 40px;
+    font-size: 1.6rem;
+    margin-right: 16px;
+}
+
+
+/* マカロンを選ぶボタン（style-l.cssと共通） */
+
+.select a {
+    display: inline-block;
+    padding: 6px 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    color: #000000;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.6rem;
+    border: 1px solid #000000;
+    line-height: 1.2;
+}
+
+.select a:hover {
+    background-color: #eb3c55;
+    color: #fff;
+    transition: 0.6s;
+}
+
+
+/*確認ボタン*/
+
+#sum_btn {
+    display: block;
+    font-size: 2.2rem;
+    padding: 10px 40px;
+    margin: 50px auto;
+    text-decoration: none;
+    background: #fff;
+    color: #333;
+    border: 1px solid #00afcc;
+    border-radius: 15px 15px 15px 15px;
+}
+
+#sum_btn:hover {
+    background-color: #eb3c55;
+    color: #fff;
+    transition: 0.6s;
+}
+
+
+/*accessスマホ用調整*/
+
+.access-wrapper {
+    border: 1px solid #333;
+    border-radius: 15px;
+}
+
+.map-image {
+    border-radius: 15px 15px 0 0;
+    width: 100%;
+}
+
+.right-box {
+    width: 100%;
+}
+
+.cafe-text {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+.shop-name {
+    font-size: 2.2rem;
+    font-weight: bold;
+}
+
+.shop-address {
+    font-size: 1.6rem;
+}
+
+
+/*お問い合わせフォーム*/
+
+
+/*①フォーム（form）の幅はcontactエリア（#contact）のwidth:80%;
+
+に設定します。 ②フォームの子要素であるお名前フォーム（.form-name）とメールフォーム（.form-mail）の幅は80%に、お問い合わせ内容フォーム（.ct_iptxt）の幅は100%に設定します。*/
+
+form {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.contact-text {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 1.6rem;
+    margin-bottom: 18px;
+}
+
+.form-name,
+.form-mail {
+    border: 1px solid #000000;
+    width: 80%;
+    height: 40px;
+}
+
+.ct_iptxt {
+    display: flex;
+    flex-flow: column;
+    margin-top: 32px;
+    width: 100%;
+}
+
+#request-about {
+    border: 1px solid #333;
+}
+
+
+/*セレクトフォーム（.cp_ipselect）も親要素formの80%幅で設定する調整*/
+
+.cp_ipselect {
+    overflow: hidden;
+    width: 80%;
+    text-align: center;
+}
+
+.cp_ipselect select {
+    width: 100%;
+    padding-right: 10px;
+    cursor: pointer;
+    text-indent: 0.01px;
+    text-overflow: ellipsis;
+    border: none;
+    outline: none;
+    background: transparent;
+    background-image: none;
+    box-shadow: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.cp_ipselect select::-ms-expand {
+    display: none;
+}
+
+.cp_ipselect.cp_sl02 {
+    position: relative;
+    border: 1px solid #bbbbbb;
+    border-radius: 2px;
+    background: #ffffff;
+}
+
+.cp_ipselect.cp_sl02::before {
+    position: absolute;
+    top: 0.8em;
+    right: 0.9em;
+    width: 0;
+    height: 0;
+    padding: 0;
+    content: '';
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #666666;
+    pointer-events: none;
+}
+
+.cp_ipselect.cp_sl02:after {
+    position: absolute;
+    top: 0;
+    right: 2.5em;
+    bottom: 0;
+    width: 1px;
+    content: '';
+    border-left: 1px solid #bbbbbb;
+}
+
+.cp_ipselect.cp_sl02 select {
+    padding: 8px 38px 8px 8px;
+    color: #666666;
+}
+
+
+/* 送信するボタン */
+
+.send-button {
+    border: 1px solid #333;
+    background-color: #fff;
+    border-radius: 10px 10px 10px 10px;
+    font-size: 1.6rem;
+    padding: 20px 30px;
+    margin-top: 36px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    text-align: center;
+}
+
+.send-button:hover {
+    background-color: #eb3c55;
+    color: #fff;
+    transition: 0.6s;
+}
+
+
+/*footerエリアのCSS*/
+
+footer {
+    background: linear-gradient(to bottom, #ebeae4, #39b5ca);
+    width: 100%;
+    padding: 60px auto 40px;
+    margin: 0 auto;
+    line-height: 2.0;
+}
+
+.footer-content {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+    font-size: 1.8rem;
+}
+
+.footer-content a {
+    text-decoration: none;
+    color: #333;
+}
+
+.footer-content a:hover {
+    color: #da3c41;
+}
+
+
+/* 451px以上768px以下の画面幅専用のCSS */
+
+@media screen and (min-width: 451px) {
+    .logo-wrapper,
+    .menu,
+    .policy,
+    .sns-wrapper {
+        width: 50%;
+    }
+    .logo {
+        width: 80%;
+    }
+    .logo-wrapper,
+    .menu {
+        border-bottom: 1px solid #333;
+    }
+    .logo-wrapper,
+    .policy {
+        border-right: 1px solid #333;
+    }
+}
+
+
+/* 450px以下の画面幅専用のCSS */
+
+@media screen and (max-width: 450px) {
+    .logo-wrapper {
+        width: 70%;
+    }
+    .logo,
+    .menu,
+    .policy {
+        width: 100%;
+    }
+    .sns-wrapper {
+        width: 50%;
+    }
+    .menu,
+    .policy {
+        border-bottom: 1px solid #333;
+    }
+}
+
+
+/* 768px以下共通のCSS */
+
+.logo-wrapper,
+.menu,
+.policy,
+.sns-wrapper {
+    padding: 16px;
+}
+
+
+/* snsエリア */
+
+.mark-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin-top: 30px;
+    width: 60%;
+}
+
+.followme {
+    font-size: 1.6rem;
+    text-align: left;
+}
+
+.sample a {
+    width: 56px;
+    height: 56px;
+    border-radius: 28px;
+}
+
+.sns-mark {
+    width: 56px;
+    margin-right: 12px;
+}
+
+
+/* コピーライト */
+
+footer small {
+    font-size: 1.4rem;
+    margin-top: 60px;
+    display: block;
+    text-align: center;
+    position: relative;
+    top: -20px;
+}

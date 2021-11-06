@@ -1,0 +1,943 @@
+@charset "UTF-8";
+
+/* ベース */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.wrap {
+  overflow: hidden;
+}
+
+body {
+  color: #333;
+  font-size: 1.4rem;
+  font-family: "YuGothic", Yu Gothic, sans-serif;
+}
+
+li {
+  list-style-type: none;
+}
+
+/* エリア */
+#concept,
+#feature,
+#staff,
+#life,
+#access,
+#daily,
+#contact {
+  padding-top: 70px;
+  padding-bottom: 60px;
+}
+
+/* 共通パーツ */
+.about-text {
+  font-size: 1.6rem;
+  letter-spacing: 0.8px;
+}
+
+.content-wrapper {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.title {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 3.2rem;
+  margin-bottom: -5px;
+}
+
+.ja-title {
+  font-size: 1.4rem;
+}
+
+.box-design {
+  background-color: #fff;
+  border-radius: 20px;
+  filter: drop-shadow(8px 8px 6px #404040)
+}
+
+.feature-wrapper,
+.life-wrapper,
+.product-wrapper,
+.package-wrapper,
+.access-wrapper {
+  max-width: 1024px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+.product-image,
+.package-image {
+  width: 100%;
+  border-radius: 20px;
+  border: 1px solid #00afcc;
+}
+
+/* =========headerエリア============= */
+
+/* グローバルナビゲーション（header要素） */
+.nav-wrapper {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding-top: 40px;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.gnavi {
+  background-color: #7d7d7d;
+  border: 1px solid #fff;
+  border-radius: 30px;
+  padding: 0 30px;
+  margin-right: 24px;
+  margin-left: 24px;
+}
+
+.gnavi ul {
+  height: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.gnavi ul li a {
+  height: 100%;
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+.gnavi ul li a:hover {
+  color: #333;
+  background-color: #eb3c55;
+  opacity: 0.5;
+  transition: 0.6s;
+}
+
+/* メインビジュアルエリア */
+
+#mainVisual {
+  background: linear-gradient(to bottom, #00afcc, #a0d8ef);
+  height: 100vh;
+}
+
+.mv-wrapper {
+  max-width: 1024px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  position: relative;
+  top: 80px;
+}
+
+/* マカロン画像 */
+.mv-left {
+  position: absolute;
+  top: 120px;
+  left: 6%;
+}
+
+.mv-left img {
+  width: 320px;
+}
+
+/* 商品名・値段・購入ボタン */
+
+.mv-right {
+  position: absolute;
+  top: 150px;
+  right: 6%;
+}
+
+/* 商品名・値段のテキスト */
+
+h1,
+.price {
+  font-family: 'Libre Baskerville', serif;
+}
+
+h1 {
+  font-size: 6.4rem;
+}
+
+.price1 {
+  font-size: 4.8rem;
+  margin-right: 20px;
+}
+
+.price2 {
+  font-size: 6.0rem;
+}
+
+.price span {
+  margin-top: 14px;
+}
+
+.purchase-button {
+  filter: drop-shadow(4px 4px 6px #404040);
+  position: relative;
+  top: 50px;
+  left: 50%;
+}
+
+.purchase-button a {
+  background-color: #eb3c55;
+  color: #fff;
+  padding: 20px 40px;
+  font-size: 2.2rem;
+  text-decoration: none;
+}
+
+.purchase-button a:hover {
+  background-color: #fff;
+  color: #eb3c55;
+  transition: 0.6s;
+}
+
+/* ===========headerエリア============= */
+
+/* ===========conceptエリア=========== */
+
+#concept {
+  background-color: #e4ecef;
+  background-image: url(../image/concept/back1.png),
+    url(../image/concept/back2.png);
+  background-size: 22%,
+    22%;
+  background-repeat: no-repeat;
+  background-position: 0 100%,
+    100% 0;
+  text-align: center;
+}
+
+/* コンセプトコピー */
+.main-copy {
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+
+.concept-text {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+/* ===========conceptエリア=========== */
+
+/* ===========featureエリア=========== */
+
+#feature {
+  background-color: #c8e1ec;
+}
+
+.feature-box {
+  width: 32%;
+}
+
+.feature-box:nth-of-type(2) {
+  background-color: #efd9dc;
+}
+
+.feature-image {
+  width: 100%;
+  border-radius: 20px 20px 0 0;
+}
+
+.feature-text {
+  padding: 30px 15px 50px 15px;
+}
+
+.feature-number,
+.feature-about {
+  font-size: 1.6rem;
+}
+
+.feature-about {
+  margin-top: 30px;
+}
+
+.feature-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+/* ===========featureエリア=========== */
+
+/* ===========staffエリア=========== */
+#staff {
+  background-color: #e4ecef;
+}
+
+.staff-container {
+  position: relative;
+}
+
+/* active要素を持つ.staff-box要素のみ表示させる */
+.staff-box {
+  display: none;
+}
+
+.staff-box.active {
+  display: flex;
+  flex: nowrap;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.staff-image {
+  display: block;
+  width: 40%;
+  border: 1px solid #00afcc;
+  border-radius: 10px;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 20px;
+}
+
+.staff-text {
+  padding: 40px 20px 40px 20px;
+  text-align: center;
+}
+
+.staff-title {
+  font-size: 2.0rem;
+}
+
+.staff-about {
+  margin-top: 16px;
+  padding: 16px;
+  border: 1px solid #eb3c55;
+  border-radius: 3px;
+  text-align: left;
+}
+
+.staff-name {
+  font-weight: bold;
+  border-bottom: dashed 3px #eb3c55;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.button {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: block;
+  content: '';
+  width: 48px;
+  height: 48px;
+  border-top: 2px solid #000;
+  margin: auto;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.prev {
+  left: 10px;
+  border-left: 2px solid #000;
+  transform: rotate(-45deg);
+}
+
+.next {
+  right: 10px;
+  border-right: 2px solid #000;
+  transform: rotate(45deg);
+}
+
+/* ===========staffエリア=========== */
+/* ===========lifeエリア=========== */
+.life-wrapper {
+  max-width: 1024px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin-left: 24px;
+  margin-right: 24px;
+
+}
+
+.life-type {
+  text-align: center;
+  width: 15%;
+}
+
+.life-img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.life-type a {
+  display: block;
+  padding: 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #333;
+  font-size: 1.6rem;
+}
+
+.life-type a:hover {
+  background-color: #eb3c55;
+  color: #fff;
+  transition: 0.6s;
+}
+
+
+/* モーダルのスタイル */
+.modal-main {
+  display: none;
+}
+
+.inner {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  color: #666666;
+  position: fixed;
+  top: 0;
+  left: 0;
+    z-index: 2;
+}
+
+.inner-content {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.inner img {
+  width: 35%;
+  margin: 0 auto;
+}
+
+.inner-title {
+  margin-top: 40px;
+  margin-bottom: 10px;
+  font-size: 2.8rem;
+  font-weight: bold;
+}
+
+.inner-text {
+  font-size: 1.6rem;
+  width: 70%;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.modalClose {
+  display: inline-block;
+  padding: 20px 40px;
+  background-color: #00afcc;
+  font-size: 1.8rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+.modalClose:hover {
+  color: #00afcc;
+  background-color: #e4e0e1;
+  transition: 0.6s;
+}
+
+/* ===========lifeエリア=========== */
+
+
+/* ===========lineupエリア=========== */
+
+/* ラインナップメニュー×6 */
+
+#purchase-area {
+  background: linear-gradient(to bottom, #e095a0, #e4e0e1);
+  padding-top: 70px;
+  padding-bottom: 60px;
+}
+
+.lineup-menu {
+  max-width: 1024px;
+  margin-bottom: 32px;
+}
+
+.lineup-menu ul {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+.lineup-menu ul li {
+  width: 15%;
+  height: 32px;
+  text-align: center;
+  border-radius: 10px 10px 10px 10px;
+  border: 1px solid #00afcc;
+  background-color: #fff;
+}
+
+.lineup-menu ul li a {
+  display: block;
+  text-decoration: none;
+  border-radius: 9px 9px 9px 9px;
+  line-height: 30px;
+  color: #333;
+  width: 100%;
+}
+
+.lineup-menu ul li a:hover {
+  color: #fff;
+  background-color: #eb3c55;
+  transition: 0.6s;
+}
+
+/* ラインナップメニュー×6 */
+
+/* ラインナップボックス×3 */
+
+.product-wrapper {
+  max-width: 1024px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+.lineup-product,
+.package-lineup {
+  width: 32%;
+}
+
+.product-name {
+  margin-top: 20px;
+}
+
+.name-en {
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+
+.product-about {
+  margin-top: 20px;
+}
+
+/* ラインナップボックス×3 */
+
+/* moreボタン */
+
+.more-product {
+  text-align: center;
+}
+
+.btn-more {
+  display: inline-block;
+  font-size: 2.4rem;
+  padding: 8px 60px;
+  text-decoration: none;
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #00afcc;
+  border-radius: 15px 15px 15px 15px;
+  margin-top: 40px;
+}
+
+.btn-more:hover {
+  background-color: #eb3c55;
+  color: #fff;
+  transition: 0.6s;
+}
+
+/* ===========lineupエリア=========== */
+
+/* ===========packageエリア =========== */
+#package {
+  padding-top: 70px;
+}
+
+.package-wrapper {
+  max-width: 1024px;
+}
+
+/* テキストエリア（.pack-text） */
+.pack-text {
+  position: relative;
+  height: 200px;
+}
+
+.package-text,
+.package-name {
+  margin-top: 20px;
+}
+
+.package-number {
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+
+.package-number,
+.value {
+  display: inline-block;
+}
+
+.value {
+  font-size: 2.2rem;
+  float: right;
+}
+
+.value small {
+  font-size: 1.6rem;
+}
+
+/* 購入エリア */
+.purchase-wrapper {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+}
+
+.number-form {
+  border: 1px solid #333;
+  background-color: #fff;
+  width: 15%;
+  height: 40px;
+  font-size: 1.6rem;
+  margin-right: 10px;
+}
+
+.purchase-number {
+  position: relative;
+  right: 4px;
+}
+
+.select a {
+  display: inline-block;
+  padding: 6px 30px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  color: #000000;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.6rem;
+  border: 1px solid #000000;
+  line-height: 1.2;
+}
+
+.select {
+  margin-left: 16px;
+}
+
+.select a:hover {
+  background-color: #eb3c55;
+  color: #fff;
+  transition: 0.6s;
+}
+
+/* 確認画面ボタン */
+
+#sum_btn {
+  display: block;
+  font-size: 2.2rem;
+  padding: 10px 40px;
+  margin: 50px auto;
+  text-decoration: none;
+  background: #fff;
+  color: #333;
+  border: 1px solid #00afcc;
+  border-radius: 15px 15px 15px 15px;
+}
+
+#sum_btn:hover {
+  background-color: #eb3c55;
+  color: #fff;
+  transition: 0.6s;
+}
+
+/* ===========packageエリア =========== */
+
+/* ===========accessエリア=========== */
+
+.access-wrapper {
+  border: 1px solid #333;
+  border-radius: 15px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  position: relative;
+}
+
+.map-image {
+  width: 50%;
+  border-radius: 15px;
+}
+
+.cafe-text {
+  width: 50%;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.shop-name {
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+address {
+  margin-top: 24px;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.shop-tel {
+  display: inline-block;
+  margin-top: 24px;
+}
+
+/* ===========accessエリア=========== */
+
+/* ===========contactエリア=========== */
+.contact-wrapper {
+  margin: 0 auto;
+}
+
+.contact-text {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 1.6rem;
+  margin-bottom: 18px;
+}
+
+form {
+  margin: 0 auto;
+  max-width: 400px;
+}
+
+.ct_iptxt {
+  display: flex;
+  flex-flow: column;
+  margin-top: 32px;
+  width: 400px;
+}
+
+.form-name,
+.form-mail {
+  border: 1px solid #000000;
+  width: 400px;
+  height: 40px;
+}
+
+/* セレクトタグ */
+.cp_ipselect {
+  overflow: hidden;
+  width: 400px;
+  text-align: center;
+}
+
+.cp_ipselect select {
+  width: 100%;
+  padding-right: 10px;
+  cursor: pointer;
+  text-indent: 0.01px;
+  text-overflow: ellipsis;
+  border: none;
+  outline: none;
+  background: transparent;
+  background-image: none;
+  box-shadow: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.cp_ipselect select::-ms-expand {
+  display: none;
+}
+
+.cp_ipselect.cp_sl02 {
+  position: relative;
+  border: 1px solid #bbbbbb;
+  border-radius: 2px;
+  background: #ffffff;
+}
+
+.cp_ipselect.cp_sl02::before {
+  position: absolute;
+  top: 0.8em;
+  right: 0.9em;
+  width: 0;
+  height: 0;
+  padding: 0;
+  content: '';
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #666666;
+  pointer-events: none;
+}
+
+.cp_ipselect.cp_sl02:after {
+  position: absolute;
+  top: 0;
+  right: 2.5em;
+  bottom: 0;
+  width: 1px;
+  content: '';
+  border-left: 1px solid #bbbbbb;
+}
+
+.cp_ipselect.cp_sl02 select {
+  padding: 8px 38px 8px 8px;
+  color: #666666;
+}
+
+/* お問い合わせ内容 */
+#request-about {
+  border: 1px solid #333;
+}
+
+/* 送信ボタン */
+.send-button {
+  border: 1px solid #333;
+  background-color: #fff;
+  font-size: 1.6rem;
+  padding: 20px 30px;
+  margin-top: 36px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  text-align: center;
+}
+
+.send-button:hover {
+  background-color: #eb3c55;
+  color: #fff;
+  transition: 0.6s;
+}
+
+/* ===========contactエリア=========== */
+
+/* ===========footerエリア=========== */
+footer {
+  background: linear-gradient(to bottom, #ebeae4, #39b5ca);
+}
+
+.footer-content {
+  max-width: 1024px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0 auto;
+  padding-top: 110px;
+  padding-bottom: 20px;
+}
+
+.footer-content a {
+  text-decoration: none;
+  font-size: 1.4rem;
+  color: #333;
+}
+
+.footer-content a:hover {
+  color: #da3c41;
+  transition: 0.6s;
+}
+
+/* ロゴ */
+.logo-wrapper {
+  width: 16%;
+}
+
+.logo {
+  width: 100%;
+}
+
+/* メニューボックスのCSS */
+.menu ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 300px;
+  height: 100px;
+}
+
+.menu ul li {
+  width: 50%;
+}
+
+.menu,
+.policy,
+.sns-wrapper {
+  border-left: 1px solid #333;
+  border-right: 1px solid #333;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+/* 利用規約ボックス */
+.policy ul {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-between;
+  width: 140px;
+  height: 100px;
+}
+
+.policy ul li {
+  width: 100%;
+}
+
+/* SNSボックス */
+.sns-wrapper {
+  width: 230px;
+}
+
+.followme {
+  font-size: 1.6rem;
+  text-align: left;
+}
+
+.mark-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin-top: 14px;
+}
+
+.sns-mark {
+  width: 56px;
+}
+
+/* コピーライト */
+footer small {
+  font-size: 1.2rem;
+  margin-top: 80px;
+  display: block;
+  text-align: center;
+  position: relative;
+  top: -20px;
+}
+
+/* ===========footerエリア=========== */
